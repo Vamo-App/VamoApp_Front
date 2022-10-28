@@ -1,0 +1,7 @@
+Para realizar ejecutar el front, se debe:
+
+1.  Descargar la app Expo en el dispositivo de prueba
+2.  Ejecutar npm Start dentro del repositorio (Si da error, probablemente no 
+esta ubicado dentro de la carpeta del proyecto: main-app) 
+3.  Escanear el código QR que aparece en la consola con la app Expo
+
