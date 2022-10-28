@@ -1,0 +1,2 @@
+expo-cli
+react-native-svg
