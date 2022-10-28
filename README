@@ -1,4 +1,4 @@
-Para realizar ejecutar el front, se debe:
+Para ejecutar el front, se debe:
 
 1.  Descargar la app Expo en el dispositivo de prueba
 2.  Ejecutar npm Start dentro del repositorio (Si da error, probablemente no 
