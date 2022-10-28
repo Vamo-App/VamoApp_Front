@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#D5EEBB',
-    backgroundColor: '#7FC8A9',
+    backgroundColor: '#425F57',
 
 
   },
@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
 
     fontSize: 13,
     marginTop: '3%',
-    
+    color: '#B2B2B2',
   }
 });
