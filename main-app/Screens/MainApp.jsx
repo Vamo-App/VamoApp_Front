@@ -1,15 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { LogBox } from 'react-native';
+import MainScreen from './MainScreen/MainScreen.jsx';
+import ParchemosScreen from './ParchemoScreen/ParchemosScreen.jsx';
 
+LogBox.ignoreLogs(['Remote debugger']);
 
 const MainApp = () => {
     return (
-        <View >
-            <Text>App Principal, Aqui solo manejamos rutas y demas</Text>
-
-            <Text>Si se puede gente</Text>
-
-        </View>
+            <ParchemosScreen/>
     );
 }
 
