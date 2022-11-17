@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
     },
 
     message:{
-        fontFamily: 'Quicksand-Bold',
+        fontFamily: 'QuickSandBold',
     },
 
     register:{
-        fontFamily: 'Quicksand-Bold',
+        fontFamily: 'QuickSandBold',
         color: '#005C8F',
     }
 })

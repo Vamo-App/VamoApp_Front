@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "rnpm": {
-      "assets": [
-    "./assets/fonts/"
-      ]
+    "assets": [
+      "./assets/fonts/"
+    ]
   },
   "scripts": {
     "start": "expo start",
@@ -19,7 +19,8 @@
     "react": "18.0.0",
     "react-native": "0.69.6",
     "react-native-svg": "^13.4.0",
-    "react-router-native": "^6.4.3"
+    "react-router-native": "^6.4.3",
+    "expo-font": "~10.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
