@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Button, Pressable} from 'react-native';
+import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Pressable} from 'react-native';
 import LogoComponent from 'main-app/SharedComponents/LogoComponent';
 import Profile from './Components/Profile';
 import VisitedButton from './Components/VisitedButton';
@@ -10,7 +10,6 @@ import SettingsButton from './Components/SettingsButton';
 import Album from './Components/Album';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 
 const ProfileScreen= ({navigation}) => {
 
@@ -37,6 +36,7 @@ const ProfileScreen= ({navigation}) => {
                 </View>
 
                 <Album/>
+
 
             </ScrollView>
         </View>
