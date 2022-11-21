@@ -9,7 +9,9 @@ export default function App() {
 
   const [fontsLoaded] = useFonts({
     ComfortaaBold : require('./assets/fonts/Comfortaa-Bold.ttf'),
+    ComfortaaLight : require('./assets/fonts/Comfortaa-Light.ttf'),
     QuickSandBold : require('./assets/fonts/Quicksand-Bold.ttf'),
+
     
   });
 
