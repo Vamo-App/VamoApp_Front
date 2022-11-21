@@ -1,28 +1,34 @@
 import React  from 'react';
 import { Text, StyleSheet, Image, TouchableOpacity, View } from 'react-native';
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const VisitedButton = () => {
-
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.buttonLayout}>
             <Image source={require('main-app/assets/images/profileScreen/LogoVisited.png')} style={styles.logoVisited}/>
             <Text style={styles.buttonText}>Visited</Text>
-        </View>
+        </TouchableOpacity>
     
     )
 
 }
 
 const styles = StyleSheet.create({
-    container: {
+    buttonLayout: {
         alignSelf: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        width: '90%',
+        justifyContent:'space-around',
+        backgroundColor: '#9adcd4',
+        width: '45%',
+        padding: 15,
+        paddingBottom: 15,
+        borderRadius: 10,
+        shadowOpacity: 80,
+        elevation: 15,
+        marginTop: 20,
+
     },
     buttonText: {
+
         fontSize: 20,
         fontWeight: 'normal',
         paddingTop: 5,

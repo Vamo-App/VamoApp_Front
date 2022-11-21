@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings} from 'react-native';
+import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Button, Pressable} from 'react-native';
 import LogoComponent from 'main-app/SharedComponents/LogoComponent';
 import Profile from './Components/Profile';
 import VisitedButton from './Components/VisitedButton';
@@ -8,10 +8,11 @@ import FavouriteButton from './Components/FavouriteButton';
 import VamoLogo from './Components/VamoLogo';
 import SettingsButton from './Components/SettingsButton';
 import Album from './Components/Album';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 
 const ProfileScreen= ({navigation}) => {
-
 
     return (
         <View>
@@ -23,11 +24,20 @@ const ProfileScreen= ({navigation}) => {
 
                 <Profile/>
 
-                <VisitedButton/>
+                <TouchableOpacity style={styles.VisitedBtnLayout} onPress={() => navigation.navigate('VisitedScreen')}>
+                    <VisitedButton/>
+                </TouchableOpacity>
+
 
                 <View style={styles.containerButtons}>
-                    <PendingButton/>
-                    <FavouriteButton/>
+                    <TouchableOpacity style={styles.PendingBtnLayout} onPress={() => navigation.navigate('PendingScreen')}>
+                        <PendingButton/>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.FavouriteBtnLayout} onPress={() => navigation.navigate('FavouriteScreen')}>
+                        <FavouriteButton/>
+                    </TouchableOpacity>
+                    
                 </View>
 
                 <Album/>
@@ -58,7 +68,48 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         paddingLeft: -20,
         paddingRight: -20,
-    },  
+    },
+    VisitedBtnLayout: {
+        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent:'space-around',
+        backgroundColor: '#9adcd4',
+        width: '45%',
+        padding: 15,
+        paddingBottom: 15,
+        borderRadius: 10,
+        shadowOpacity: 80,
+        elevation: 15,
+        marginTop: 20,
+    },
+    PendingBtnLayout: {
+            alignSelf: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            backgroundColor: '#f3dca3',
+            width: '45%',
+            padding: 15,
+            paddingBottom: 15,
+            borderRadius: 10,
+            shadowOpacity: 80,
+            elevation: 15,
+            marginTop: 20,
+    
+    },
+    FavouriteBtnLayout: {
+        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        backgroundColor: '#f2ab99',
+        width: '45%',
+        padding: 15,
+        paddingBottom: 15,
+        borderRadius: 10,
+        shadowOpacity: 80,
+        elevation: 15,
+        marginTop: 20,
+
+    },
 
 });
 

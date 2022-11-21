@@ -1,4 +1,4 @@
-import React , {useState, useEffect}from 'react';
+import React , {useState, useEffect} from 'react';
 import { Text, View} from 'react-native';
 import MainApp from './Screens/MainApp';
 import * as Font from 'expo-font';
