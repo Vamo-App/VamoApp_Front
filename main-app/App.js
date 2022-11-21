@@ -1,5 +1,5 @@
-import React , {useState, useEffect}from 'react';
-import {View} from 'react-native';
+import React , {useState, useEffect} from 'react';
+import { Text, View} from 'react-native';
 import MainApp from './Screens/MainApp';
 import {useFonts} from 'expo-font';
 
