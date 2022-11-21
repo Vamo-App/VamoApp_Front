@@ -9,6 +9,8 @@ import PendingScreen from "./PendingScreen/PendingScreen.jsx";
 import FavouriteScreen from "./FavouriteScreen/FavouriteScreen.jsx";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import VamoLogo from './ProfileScreen/Components/VamoLogo';
+import SettingsButton from './ProfileScreen/Components/SettingsButton';
 
 LogBox.ignoreLogs(['Remote debugger']);
 
@@ -22,19 +24,39 @@ const MainApp = () => {
 
                 <ProfileStackNavigator.Screen 
                     name="ProfileScreen" 
-                    component={ProfileScreen} />
+                    component={ProfileScreen}
+                    options = {{
+                        headerTitle: () => <VamoLogo/>,
+                        headerRight: () => <SettingsButton/>,
+                        headerTransparent: true,
+                    }} />
                 
                 <ProfileStackNavigator.Screen 
                     name="VisitedScreen" 
-                    component={VisitedScreen} />
+                    component={VisitedScreen}
+                    options = {{
+                        headerTitle: (''),
+                        headerRight: () => <SettingsButton/>,
+                        headerTransparent: true,
+                    }} />
 
                 <ProfileStackNavigator.Screen 
                     name="PendingScreen" 
-                    component={PendingScreen} />
+                    component={PendingScreen}
+                    options = {{
+                        headerTitle: (''),
+                        headerRight: () => <SettingsButton/>,
+                        headerTransparent: true,
+                    }} />
 
                 <ProfileStackNavigator.Screen 
                     name="FavouriteScreen"   
-                    component={FavouriteScreen} />
+                    component={FavouriteScreen}
+                    options = {{
+                        headerTitle: (''),
+                        headerRight: () => <SettingsButton/>,
+                        headerTransparent: true,
+                    }} />
 
             </ProfileStackNavigator.Navigator>
         </NavigationContainer>

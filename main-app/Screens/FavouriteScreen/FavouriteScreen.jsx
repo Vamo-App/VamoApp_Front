@@ -12,10 +12,6 @@ const FavouriteScreen= () => {
     return (
         <View>
             <ScrollView>
-                <View style={styles.Header}>
-                    <VamoLogo/>
-                    <SettingsButton/>
-                </View>
 
                 <Profile/>
 

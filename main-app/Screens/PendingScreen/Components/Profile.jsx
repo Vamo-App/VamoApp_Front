@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         width: 140,
         height: 140,
         borderRadius: 100,
-        marginTop: -50,
+        marginTop: 100,
     },
     profileName: {
         fontSize: 25,
