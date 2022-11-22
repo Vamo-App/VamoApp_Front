@@ -19,6 +19,43 @@ let token = '';
 
 LogBox.ignoreLogs(['Remote debugger']);
 
+const call = async (method, endpoint, body) => {
+    if (method === 'GET' || method === 'HEAD') {
+        return await fetch(`${env.BACKEND_URL}${endpoint}`, {
+            method: `${method}`,
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${await getToken()}`
+            }
+        }).then(response => {
+            if (response.status === 204) {
+                return null;
+            } else {
+                return response.json();
+            }
+        })
+        .catch((error) => console.error('Error:', error));
+    } else {
+        return await fetch(`${env.BACKEND_URL}${endpoint}`, {
+            method: `${method}`,
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${await getToken()}`
+            },
+            body: JSON.stringify(body) 
+        }).then(response => {
+            if (response.status === 204) {
+                return null;
+            } else {
+                return response.json();
+            }
+        })
+        .catch((error) => console.error('Error:', error));
+    }
+};
+
 const getToken = async () => {
     
     // check that 1.5h haven't passed since last time we got the token
@@ -56,7 +93,9 @@ const MainApp = () => {
     useEffect(() => {
         const _ = async () => {
             token = await getToken();
-            getToken();
+            // EJEMPLO DEL LLAMADO AL BACKEND
+            const tags = await call('GET', '/tags', {});
+            console.log(tags);
         }
         _().catch(console.error);
     });
@@ -64,7 +103,8 @@ const MainApp = () => {
     return (
         <AppContext.Provider
             value={{
-                getToken: getToken
+                getToken: getToken,
+                call: call
             }}>
             <NavigationContainer>
                 <ProfileStackNavigator.Navigator 
