@@ -4,7 +4,7 @@ import { Text, StyleSheet, Image, TouchableHighlight, View } from 'react-native'
 const ParchemosButton = () => {
     return (
             <TouchableHighlight style = {styles.buttonSignIn} >
-                <Text style = {styles.buttonText} >Parchemos    </Text>
+                <Text style = {styles.buttonText} >Parchemos</Text>
             </TouchableHighlight>
     
     )
@@ -13,25 +13,21 @@ const ParchemosButton = () => {
 
 const styles = StyleSheet.create({
     buttonSignIn: {
-        
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 2,
-        borderRadius: 20,
+        borderRadius: 30,
         borderColor: '#2A6E66',
-        padding: 10,
-        paddingVertical: 8,
         topMargin: 20,
-        alignItems: 'center',
         width: '80%',
-        height: '7%',
+        height: '8%',
 
     },
     buttonText: {
-
         color: '#2A6E66',
         fontSize: 20,
-        fontWeight: 'bold',
+        fontFamily: 'QuickSandBold',
     }
 })
 
