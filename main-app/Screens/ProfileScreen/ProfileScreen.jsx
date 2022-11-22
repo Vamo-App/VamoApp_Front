@@ -15,19 +15,22 @@ import { call } from "./../service.js";
 
 const ProfileScreen= ({navigation}) => {
 
-    const ctx = useContext(AppContext);
+    // const ctx = useContext(AppContext);
 
-    /*useEffect(() => {
-        const _ = async () => {
-            const tk = await ctx.getToken();
-            console.log("tk", tk);
-        }
-        _().catch(console.error);
-    });*/
+    // useEffect(() => {
+    //     const _ = async () => {
+    //         const tk = await ctx.getToken();
+    //         console.log("tk", tk);
+    //         call('GET', 'clients', {}, tk);
+    //         call('GET', 'clients/46d8f1a9-2ce3-4ae8-8a3f-9d07a01a2b07', {}, tk);
+    //         console.log("ctx", ctx);
+    //     }
+    //     _().catch(console.error);
+    // });
 
     // const fx = async () => {
     //     const tk = await ctx.getToken();
-    //     call('GET', 'clients/#/pending', {}, tk);
+        
     // }
 
     return (
@@ -54,12 +57,7 @@ const ProfileScreen= ({navigation}) => {
 
                 <Album/>
 
-                {/* <button
-                onPress={fx}
-                >
-
-                </button> */}
-
+                
             </ScrollView>
         </View>
 
