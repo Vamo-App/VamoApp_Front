@@ -12,22 +12,26 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppContext from './../AppContext.js';
 import { call } from "./../service.js";
+import Card from 'main-app/SharedComponents/Card';
 
 const ProfileScreen= ({navigation}) => {
 
-    const ctx = useContext(AppContext);
+    // const ctx = useContext(AppContext);
 
-    /*useEffect(() => {
-        const _ = async () => {
-            const tk = await ctx.getToken();
-            console.log("tk", tk);
-        }
-        _().catch(console.error);
-    });*/
+    // useEffect(() => {
+    //     const _ = async () => {
+    //         const tk = await ctx.getToken();
+    //         console.log("tk", tk);
+    //         call('GET', 'clients', {}, tk);
+    //         call('GET', 'clients/46d8f1a9-2ce3-4ae8-8a3f-9d07a01a2b07', {}, tk);
+    //         console.log("ctx", ctx);
+    //     }
+    //     _().catch(console.error);
+    // });
 
     // const fx = async () => {
     //     const tk = await ctx.getToken();
-    //     call('GET', 'clients/#/pending', {}, tk);
+        
     // }
 
     return (
@@ -54,11 +58,19 @@ const ProfileScreen= ({navigation}) => {
 
                 <Album/>
 
-                {/* <button
-                onPress={fx}
-                >
+                <View style= {{paddingTop: -200}}>
 
-                </button> */}
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                </View>
 
             </ScrollView>
         </View>
@@ -128,6 +140,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
 
     },
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '100%',
+    },
+
 
 });
 

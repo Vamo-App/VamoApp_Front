@@ -6,6 +6,7 @@ import PendingButton from './Components/PendingButton';
 import VamoLogo from './Components/VamoLogo';
 import SettingsButton from './Components/SettingsButton';
 import Album from './Components/Album';
+import Card from 'main-app/SharedComponents/Card';
 
 
 const PendingScreen= ({navigation}) => {
@@ -19,7 +20,19 @@ const PendingScreen= ({navigation}) => {
 
                 <PendingButton/>
 
-                <Album/>
+                <View>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                </View>                
 
             </ScrollView>
         </View>
@@ -38,6 +51,11 @@ const styles = StyleSheet.create({
         paddingBottom: 0,
         height: 150,
     },  
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '100%',
+    },
 
 });
 
