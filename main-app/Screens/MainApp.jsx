@@ -39,13 +39,18 @@ const getToken = async () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(authuser) 
-        }).then(response => response.json())
+        }).then(response => {
+            if (response.ok) {
+                t = response.json();
+                lastTime = Date.now();
+                return t.token;        
+            } else {
+                throw new Error(`Error connecting to backend ${response.status}`);
+            }
+        })
         .catch((error) => {
-            console.error('Error:', error);
+            console.log(error);
         });
-
-        lastTime = Date.now();
-        return t.token;
     }
 }
 
