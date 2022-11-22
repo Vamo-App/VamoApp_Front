@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
 import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Pressable} from 'react-native';
 import LogoComponent from 'main-app/SharedComponents/LogoComponent';
 import Profile from './Components/Profile';
@@ -10,8 +10,25 @@ import SettingsButton from './Components/SettingsButton';
 import Album from './Components/Album';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AppContext from './../AppContext.js';
+import { call } from "./../service.js";
 
 const ProfileScreen= ({navigation}) => {
+
+    const ctx = useContext(AppContext);
+
+    /*useEffect(() => {
+        const _ = async () => {
+            const tk = await ctx.getToken();
+            console.log("tk", tk);
+        }
+        _().catch(console.error);
+    });*/
+
+    // const fx = async () => {
+    //     const tk = await ctx.getToken();
+    //     call('GET', 'clients/#/pending', {}, tk);
+    // }
 
     return (
         <View>
@@ -37,6 +54,11 @@ const ProfileScreen= ({navigation}) => {
 
                 <Album/>
 
+                {/* <button
+                onPress={fx}
+                >
+
+                </button> */}
 
             </ScrollView>
         </View>
