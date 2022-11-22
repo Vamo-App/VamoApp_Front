@@ -12,6 +12,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppContext from './../AppContext.js';
 import { call } from "./../service.js";
+import Card from 'main-app/SharedComponents/Card';
 
 const ProfileScreen= ({navigation}) => {
 
@@ -57,7 +58,20 @@ const ProfileScreen= ({navigation}) => {
 
                 <Album/>
 
-                
+                <View style= {{paddingTop: -200}}>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                </View>
+
             </ScrollView>
         </View>
 
@@ -126,6 +140,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
 
     },
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '100%',
+    },
+
 
 });
 

@@ -14,58 +14,58 @@ import SettingsButton from './ProfileScreen/Components/SettingsButton';
 import AppContext from './AppContext.js';
 import env from './.env.json';
 
-let lastTime = 0;
-let token = '';
+// let lastTime = 0;
+// let token = '';
 
 LogBox.ignoreLogs(['Remote debugger']);
 
-const getToken = async () => {
+// const getToken = async () => {
     
-    // check that 1.5h haven't passed since last time we got the token
-    if (Date.now() - lastTime <= 1.5 * 3600 * 1000) {
-        console.log(`Token is still valid, time left: ${1.5 - (Date.now() - lastTime) / 3600 / 1000}h`);
-        return token;
-    } else {
-        console.log("Requested new token");
-        const authuser = {
-            "username": env.ADMIN_USERNAME,
-            "password": env.ADMIN_PASSWORD
-        }
+//     // check that 1.5h haven't passed since last time we got the token
+//     if (Date.now() - lastTime <= 1.5 * 3600 * 1000) {
+//         console.log(`Token is still valid, time left: ${1.5 - (Date.now() - lastTime) / 3600 / 1000}h`);
+//         return token;
+//     } else {
+//         console.log("Requested new token");
+//         const authuser = {
+//             "username": env.ADMIN_USERNAME,
+//             "password": env.ADMIN_PASSWORD
+//         }
 
-        const t = await fetch(`${env.BACKEND_URL}/auth/login`, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(authuser) 
-        }).then(response => response.json())
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+//         const t = await fetch(`${env.BACKEND_URL}/auth/login`, {
+//             method: 'POST',
+//             mode: 'cors',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(authuser) 
+//         }).then(response => response.json())
+//         .catch((error) => {
+//             console.error('Error:', error);
+//         });
 
-        lastTime = Date.now();
-        return t.token;
-    }
-}
+//         lastTime = Date.now();
+//         return t.token;
+//     }
+// }
 
 const ProfileStackNavigator = createNativeStackNavigator();
 
 const MainApp = () => {
 
-    useEffect(() => {
-        const _ = async () => {
-            token = await getToken();
-            getToken();
-        }
-        _().catch(console.error);
-    });
+    // useEffect(() => {
+    //     const _ = async () => {
+    //         token = await getToken();
+    //         getToken();
+    //     }
+    //     _().catch(console.error);
+    // });
 
     return (
-        <AppContext.Provider
-            value={{
-                getToken: getToken
-            }}>
+        // <AppContext.Provider
+        //     value={{
+        //         getToken: getToken
+        //     }}>
             <NavigationContainer>
                 <ProfileStackNavigator.Navigator 
                     initialRouteName="ProfileScreen">
@@ -108,7 +108,7 @@ const MainApp = () => {
 
                 </ProfileStackNavigator.Navigator>
             </NavigationContainer>
-        </AppContext.Provider>
+        // </AppContext.Provider>
     );
 }
 
