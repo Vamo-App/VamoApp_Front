@@ -55,7 +55,7 @@ const getToken = async () => {
             return t.token;
         } else {
             console.error("Error getting token");
-            return '';
+            return null;
         }
 
     }
