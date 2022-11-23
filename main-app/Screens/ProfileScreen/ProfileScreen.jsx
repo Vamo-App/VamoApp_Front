@@ -14,43 +14,31 @@ import AppContext from './../AppContext.js';
 import { call } from "./../service.js";
 import Card from 'main-app/SharedComponents/Card';
 
-const ProfileScreen= ({navigation}) => {
-
-    // const ctx = useContext(AppContext);
-
-    // useEffect(() => {
-    //     const _ = async () => {
-    //         const tk = await ctx.getToken();
-    //         console.log("tk", tk);
-    //         call('GET', 'clients', {}, tk);
-    //         call('GET', 'clients/46d8f1a9-2ce3-4ae8-8a3f-9d07a01a2b07', {}, tk);
-    //         console.log("ctx", ctx);
-    //     }
-    //     _().catch(console.error);
-    // });
-
-    // const fx = async () => {
-    //     const tk = await ctx.getToken();
-        
-    // }
+const ProfileScreen= ({navigation, id}) => {
 
     return (
         <View>
             <ScrollView>
 
-                <Profile/>
+                <Profile id={id}/>
 
-                <TouchableOpacity style={styles.VisitedBtnLayout} onPress={() => navigation.navigate('VisitedScreen')}>
+                <TouchableOpacity style={styles.VisitedBtnLayout} onPress={() => navigation.navigate('VisitedScreen', {
+                    id: id
+                })}>
                     <VisitedButton/>
                 </TouchableOpacity>
 
 
                 <View style={styles.containerButtons}>
-                    <TouchableOpacity style={styles.PendingBtnLayout} onPress={() => navigation.navigate('PendingScreen')}>
+                    <TouchableOpacity style={styles.PendingBtnLayout} onPress={() => navigation.navigate('PendingScreen', {
+                        id: id
+                    })}>
                         <PendingButton/>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.FavouriteBtnLayout} onPress={() => navigation.navigate('FavouriteScreen')}>
+                    <TouchableOpacity style={styles.FavouriteBtnLayout} onPress={() => navigation.navigate('FavouriteScreen', {
+                        id: id
+                    })}>
                         <FavouriteButton/>
                     </TouchableOpacity>
                     
