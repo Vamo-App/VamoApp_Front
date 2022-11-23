@@ -9,7 +9,7 @@ import HomeScreen from '../Screens/Home/HomeScreen';
 import UserLogin from '../Screens/Users/LogIn/UserLogin';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import TabComponent from './TabComponent';
+import TabComponent from '../Screens/BottomTab/TabComponent';
 import PlaceScreen from '../Screens/PlaceScreen/PlaceScreen';
 
 const Tab = createBottomTabNavigator();
@@ -27,7 +27,6 @@ const BottomTab = () => {
 
     return (
         <Tab.Navigator
-        initialRouteName='Home'
         screenOptions={
             ({route}) => ({
                 tabBarIcon: ({ focused }) => {

@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Pressable} from 'react-native';
-import LogoComponent from 'main-app/SharedComponents/LogoComponent';
+import React from 'react';
+import {View, ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
 import Profile from './Components/Profile';
 import VisitedButton from './Components/VisitedButton';
 import PendingButton from './Components/PendingButton';
 import FavouriteButton from './Components/FavouriteButton';
-import VamoLogo from './Components/VamoLogo';
-import SettingsButton from './Components/SettingsButton';
 import Album from './Components/Album';
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const ProfileScreen= ({navigation}) => {
 
