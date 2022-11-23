@@ -8,7 +8,7 @@ const FavouriteButton = () => {
     return (
         <View style={styles.container}>
             <Image source={require('main-app/assets/images/profileScreen/LogoFavourite.png')} style={styles.logoFavourite}/>
-            <Text style = {styles.buttonText}>Favourite</Text>
+            <Text style = {styles.buttonText}>    Favourite</Text>
         </View>
     
     )

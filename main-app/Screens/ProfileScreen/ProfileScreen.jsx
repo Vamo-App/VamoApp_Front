@@ -1,30 +1,43 @@
-import React from 'react';
-import {View, ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
+
+import React, { Component, useContext, useEffect } from 'react';
+import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Pressable} from 'react-native';
+import LogoComponent from 'main-app/SharedComponents/LogoComponent';
 import Profile from './Components/Profile';
 import VisitedButton from './Components/VisitedButton';
 import PendingButton from './Components/PendingButton';
 import FavouriteButton from './Components/FavouriteButton';
 import Album from './Components/Album';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AppContext from './../AppContext.js';
+import { call } from "./../service.js";
+import Card from 'main-app/SharedComponents/Card';
 
-const ProfileScreen= ({navigation}) => {
+const ProfileScreen= ({navigation, id}) => {
 
     return (
         <View>
             <ScrollView>
 
-                <Profile/>
+                <Profile id={id}/>
 
-                <TouchableOpacity style={styles.VisitedBtnLayout} onPress={() => navigation.navigate('VisitedScreen')}>
+                <TouchableOpacity style={styles.VisitedBtnLayout} onPress={() => navigation.navigate('VisitedScreen', {
+                    id: id
+                })}>
                     <VisitedButton/>
                 </TouchableOpacity>
 
 
                 <View style={styles.containerButtons}>
-                    <TouchableOpacity style={styles.PendingBtnLayout} onPress={() => navigation.navigate('PendingScreen')}>
+                    <TouchableOpacity style={styles.PendingBtnLayout} onPress={() => navigation.navigate('PendingScreen', {
+                        id: id
+                    })}>
                         <PendingButton/>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.FavouriteBtnLayout} onPress={() => navigation.navigate('FavouriteScreen')}>
+                    <TouchableOpacity style={styles.FavouriteBtnLayout} onPress={() => navigation.navigate('FavouriteScreen', {
+                        id: id
+                    })}>
                         <FavouriteButton/>
                     </TouchableOpacity>
                     
@@ -32,6 +45,19 @@ const ProfileScreen= ({navigation}) => {
 
                 <Album/>
 
+                <View style= {{paddingTop: -200}}>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                    <View style={styles.container}>
+                        <Card/>
+                        <Card/>
+                    </View>
+
+                </View>
 
             </ScrollView>
         </View>
@@ -101,6 +127,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
 
     },
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        width: '100%',
+    },
+
 
 });
 

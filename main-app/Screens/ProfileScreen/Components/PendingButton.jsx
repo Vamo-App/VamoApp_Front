@@ -8,7 +8,7 @@ const PendingButton = () => {
     return (
         <View style={styles.container}>
             <Image source={require('main-app/assets/images/profileScreen/LogoPending.png')} style={styles.logoPending}/>
-            <Text style = {styles.buttonText}>Pending</Text>
+            <Text style = {styles.buttonText}>  Pending</Text>
         </View>
     )
 
