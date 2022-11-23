@@ -11,7 +11,6 @@ import Album from './Components/Album';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppContext from './../AppContext.js';
-import { call } from "./../service.js";
 import Card from 'main-app/SharedComponents/Card';
 
 const ProfileScreen= ({navigation, id}) => {
@@ -54,6 +53,8 @@ const ProfileScreen= ({navigation, id}) => {
                     </View>
 
                     <View style={styles.container}>
+                        {/* <Card id={id}/>
+                        <Card id={id}/> */}
                         <Card/>
                         <Card/>
                     </View>

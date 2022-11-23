@@ -1,5 +1,31 @@
-import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import React, { useContext, useEffect, useState }  from 'react';
+import { Text, StyleSheet, Image, TouchableOpacity, View } from 'react-native';
+import AppContext from '../Screens/AppContext';
+
+// const Card = ({id}) => {
+//     const { call } = useContext(AppContext);
+
+//     const [client, setPost] = useState({});
+
+//     useEffect(() => {
+//         const _ = async () => {
+//             const posts = await call('GET', `/clients/${/*props.*/id}/posts`, {});
+//             setPost(posts);
+//         }
+//         _().catch(console.error);
+//     }, []);
+
+//     return (
+//         <View style={styles.card}>
+//             <TouchableOpacity>
+//                 <Image source={(client && 'picture' in client && client.picture) ? client.picture : require('main-app/assets/images/profileScreen/Trips.png')}
+//                     style={styles.logo}>
+//                 </Image>
+//             </TouchableOpacity>
+//         </View>
+//     )
+// }
+
 
 export default function Card(img) {
     return (
