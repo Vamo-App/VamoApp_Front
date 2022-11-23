@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect } from 'react';
+import React, { Component, useContext, useEffect, useState } from 'react';
 import {View, ScrollView, TouchableHighlight, TouchableOpacity, StyleSheet, Text, Image, Settings, Pressable} from 'react-native';
 import LogoComponent from 'main-app/SharedComponents/LogoComponent';
 import Profile from './Components/Profile';
@@ -13,10 +13,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppContext from './../AppContext.js';
 import Card from 'main-app/SharedComponents/Card';
 
+
 const ProfileScreen= ({navigation, id}) => {
+
 
     return (
         <View>
+
             <ScrollView>
 
                 <Profile id={id}/>
