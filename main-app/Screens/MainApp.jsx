@@ -231,7 +231,7 @@ const MainApp = () => {
                 <TabComponent />
 
             </NavigationContainer>
-        </View>
+        </AppContext.Provider>
             
         
 
